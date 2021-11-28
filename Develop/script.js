@@ -12,7 +12,9 @@ function promptDisplay () {
   }
 }
 
-document.getElementById("generate").addEventListener(click, "password"); 
+document.getElementById("generate").addEventListener("click", function() {
+  document.getElementById("password").innerHTML = "Testing";
+});
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
