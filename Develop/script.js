@@ -1,14 +1,18 @@
 // Assignment code here
-var passwordPrompts = function (prompts) {
-  prompt[0] = "Password is at least 8 characters.";
-  prompt[1] = "Password has a mixture of both uppercase and lowercase letters";
-  prompt[2] = "Password has a mixture of letters and numbers";
-  prompt[3] = " Password includes at least one special character, e.g., ! @ # ? ]";
+//https://stackoverflow.com/questions/9895082/javascript-populate-drop-down-list-with-array
+//https://stackoverflow.com/questions/57984670/how-do-i-display-a-list-when-button-is-clicked-in-javascript
+function promptDisplay () {
+   var prompts = ["Password is at least 8 characters.", 
+  "Password has a mixture of both uppercase and lowercase letters", 
+  "Password has a mixture of letters and numbers", 
+  "Password includes at least one special character, e.g., ! @ # ? ]"]
 
-  for(i = 0; i < prompt.length; i++) {
-    console.log(prompt[i]);
+  for(var i = 0; i < prompts.length; i++) {
+    console.log(prompts[i]);
   }
 }
+
+document.getElementById("generate").addEventListener(click, "password"); 
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
