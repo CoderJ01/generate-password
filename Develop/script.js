@@ -5,14 +5,10 @@
 // Method 1 Reference //
 
 function promptsDisplay () {
-   var prompts = ["Password is at least 8 characters.", 
-  "Password has a mixture of both uppercase and lowercase letters", 
-  "Password has a mixture of letters and numbers", 
-  "Password includes at least one special character, e.g., ! @ # ? ]"]
-
-  for(var i = 0; i < prompts.length; i++) {
-    console.log(prompts[i]);
-  }
+   var prompts = ["Password is at least 8 characters.",
+  "\nPassword has a mixture of both uppercase and lowercase letters", 
+  "\nPassword has a mixture of letters and numbers", 
+  "\nPassword includes at least one special character, e.g., ! @ # ? ]"]
 
   document.getElementById("generate").addEventListener("click", function () {
     document.getElementById("password").innerHTML= prompts.join(" ");
