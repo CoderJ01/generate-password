@@ -4,34 +4,40 @@
 
 // Method 1 Reference //
 
-// function promptsDisplay () {
-//    var prompts = ["Password is at least 8 characters.", 
-//   "Password has a mixture of both uppercase and lowercase letters", 
-//   "Password has a mixture of letters and numbers", 
-//   "Password includes at least one special character, e.g., ! @ # ? ]"]
+function promptsDisplay () {
+   var prompts = ["Password is at least 8 characters.", 
+  "Password has a mixture of both uppercase and lowercase letters", 
+  "Password has a mixture of letters and numbers", 
+  "Password includes at least one special character, e.g., ! @ # ? ]"]
 
-//   for(var i = 0; i < prompts.length; i++) {
-//     console.log(prompts[i]);
-//   }
-// }
+  for(var i = 0; i < prompts.length; i++) {
+    console.log(prompts[i]);
+  }
+
+  document.getElementById("generate").addEventListener("click", function () {
+    document.getElementById("password").innerHTML= prompts.join(" ");
+  });
+}
+
+promptsDisplay();
 
 // document.getElementById("generate").addEventListener("click", function () {
 //   document.getElementById("password").innerHTML= "testing";
 // });
 
-// Method //
+// Method 2 Reference //
 
-function showPrompts() {
-  var promptList = new Array("Password is at least 8 characters.", 
-  "Password has a mixture of both uppercase and lowercase letters", 
-  "Password has a mixture of letters and numbers", 
-  "Password includes at least one special character, e.g., ! @ # ? ]");
-  promptList.sort();
+// function showPrompts() {
+//   var promptList = new Array("Password is at least 8 characters.", 
+//   "Password has a mixture of both uppercase and lowercase letters", 
+//   "Password has a mixture of letters and numbers", 
+//   "Password includes at least one special character, e.g., ! @ # ? ]");
+//   promptList.sort();
 
-  document.getElementById("password").innerHTML = promptList.join(" ");
-}
+//   document.getElementById("password").innerHTML = promptList.join(" ");
+// }
 
-showPrompts();
+// showPrompts();
 
 
 
