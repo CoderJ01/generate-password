@@ -107,15 +107,17 @@ var promptQuestionS = function () {
 
 var selectedOrNot = function () {
   var nResult = promptQuestionN();
-  var lResult = promptQuestionL();
-  var uResult = promptQuestionU();
-  var nuResult = promptQuestionNu();
-  var sResult = promptQuestionS();
-  console.log(sResult + " hey");
 
-  if (lResult !== true && uResult !== true && nuResult !== true && sResult !== true) {
-    console.log("Invalid inputs! At least one character type needs to be validated!");
-  }
+  while (lResult !== true && uResult !== true && nuResult !== true && sResult !== true) {
+    var lResult = promptQuestionL();
+    var uResult = promptQuestionU();
+    var nuResult = promptQuestionNu();
+    var sResult = promptQuestionS();
+
+    if (lResult !== true && uResult !== true && nuResult !== true && sResult !== true) {
+      window.alert("Invalid inputs! At least one character type needs to be validated!");
+    }
+  } 
 }
 
 selectedOrNot();
