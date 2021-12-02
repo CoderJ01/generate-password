@@ -1,6 +1,6 @@
 var promptQuestionN = function () {
   var numChars = "";
-  var listOfChars = [];
+  //var listOfChars = [];
   
   while (numChars < 8 || numChars > 128) {
     numChars = prompt("Enter the number of characters (8 - 128) you would like your password to have");
@@ -112,6 +112,10 @@ var selectedOrNot = function () {
   var nuResult = promptQuestionNu();
   var sResult = promptQuestionS();
   console.log(sResult + " hey");
+
+  if (lResult !== true && uResult !== true && nuResult !== true && sResult !== true) {
+    console.log("Invalid inputs! At least one character type needs to be validated!");
+  }
 }
 
 selectedOrNot();
