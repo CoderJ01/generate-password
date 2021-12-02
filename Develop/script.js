@@ -1,55 +1,60 @@
 var promptQuestionN = function () {
   var numChars = "";
   
-  while (numChars === "" || numChars === null) {
+  while (numChars < 8 || numChars > 128) {
     numChars = prompt("Enter the number of characters (8 - 128) you would like your password to have");
-  
-  
 
-  if (numChars < 8 || numChars > 128) {
-    window.alert("Invalid input. The number of characters need to be between 8 and 128");
-  }
-  else {
-    for (var i = 0; i < numChars; i++) {
-      var randomNum = listOfChars[Math.floor(Math.random() * 5)];
+    if (numChars < 8 || numChars > 128) {
+      window.alert("Invalid input. The number of characters need to be between 8 and 128");
     }
   }
-
-}
   
+  for (var i = 0; i < numChars; i++) {
+    var randomNum = listOfChars[Math.floor(Math.random() * 5)];
+  }
 }
 
 var promptQuestionL = function () {
   var lowercase = "";
   var validateL = true;
 
-  lowercase = prompt("Would you like to include lowercase letters in your password?")
+  while (lowercase !== "yes" && lowercase !== "YES" && lowercase !== "no" &&  lowercase !== "NO") {
+
+    lowercase = prompt("Would you like to include lowercase letters in your password?")
+    
+    if (lowercase !== "yes" && lowercase !== "YES" && lowercase !== "no" &&  lowercase !== "NO") {
+      window.alert("Invalid input. Answer the question with 'yes' or 'no.'");
+    }
+  }
 
   if (lowercase === "yes" || lowercase === "YES") {
     validateL = true;
   }
-  else if (lowercase === "no" || lowercase === "NO") {
+  else {
     validateL = false; 
   }
-  else {
-    window.alert("Invalid input. Answer the question with 'yes' or 'no.'");
-  }
+
+  return validateL;
 }
 
 var promptQuestionU = function () {
   var uppercase = "";
   var validateU = true;
 
-  uppercase = prompt("Would you like to include uppercase letters in your password?")
+  while (uppercase !== "yes" && uppercase !== "YES" && uppercase !== "no" &&  uppercase !== "NO") {
+
+    uppercase = prompt("Would you like to include uppercase letters in your password?");
+
+    if (uppercase !== "yes" && uppercase !== "YES" && uppercase !== "no" &&  uppercase !== "NO") {
+      window.alert("Invalid input. Answer the question with 'yes' or 'no.'");
+    }
+  }
 
   if (uppercase === "yes" || uppercase === "YES") {
     validateU = true;
   }
-  else if (uppercase === "no" || uppercase === "NO") {
-    validateU = false; 
-  }
   else {
-    window.alert("Invalid input. Answer the question with 'yes' or 'no.'");
+    validateU = false; 
   }
 }
 
@@ -57,42 +62,49 @@ var promptQuestionNu = function () {
   var numeric = "";
   var validateNu = true;
 
-  numeric = prompt("Would you like to include numeric characters in your password?")
+  while (numeric !== "yes" && numeric !== "YES" && numeric !== "no" &&  numeric !== "NO") {
+
+    numeric = prompt("Would you like to include numeric characters in your password?");
+
+    if (numeric !== "yes" && numeric !== "YES" && numeric !== "no" &&  numeric !== "NO") {
+      window.alert("Invalid input. Answer the question with 'yes' or 'no.'");
+    }
+  }
 
   if (numeric === "yes" || numeric === "YES") {
     validateNu = true;
   }
-  else if (numeric === "no" || numeric === "NO") {
+  else {
     validateNu = false; 
   }
-  else {
-    window.alert("Invalid input. Answer the question with 'yes' or 'no.'");
-  }
 }
-
 
 var promptQuestionS = function () {
   var special = "";
   var validateS = true;
 
-  special = prompt("Would you like to include special characters in your password?")
+  while (special !== "yes" && special !== "YES" && special !== "no" &&  special !== "NO") {
+
+    special = prompt("Would you like to include special characters in your password?");
+
+    if (special !== "yes" && special !== "YES" && special !== "no" &&  special !== "NO") {
+      window.alert("Invalid input. Answer the question with 'yes' or 'no.'");
+    }
+  }
 
   if (special === "yes" || special === "YES") {
     validateS = true;
   }
-  else if (special === "no" || special === "NO") {
-    validateS = false; 
-  }
   else {
-    window.alert("Invalid input. Answer the question with 'yes' or 'no.'");
+    validateS = false; 
   }
 }
 
-promptQuestionN();
-promptQuestionL();
+// promptQuestionN();
+// promptQuestionL();
 promptQuestionU();
-promptQuestionNu();
-promptQuestionS();
+// promptQuestionNu();
+// promptQuestionS();
 
 
 // Get references to the #generate element
