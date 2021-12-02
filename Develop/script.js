@@ -1,40 +1,98 @@
-// Assignment code here
-//https://stackoverflow.com/questions/9895082/javascript-populate-drop-down-list-with-array
-//https://stackoverflow.com/questions/57984670/how-do-i-display-a-list-when-button-is-clicked-in-javascript
+var promptQuestionN = function () {
+  var numChars = "";
+  
+  while (numChars === "" || numChars === null) {
+    numChars = prompt("Enter the number of characters (8 - 128) you would like your password to have");
+  
+  
 
-// Method 1 Reference //
+  if (numChars < 8 || numChars > 128) {
+    window.alert("Invalid input. The number of characters need to be between 8 and 128");
+  }
+  else {
+    for (var i = 0; i < numChars; i++) {
+      var randomNum = listOfChars[Math.floor(Math.random() * 5)];
+    }
+  }
 
-function promptsDisplay () {
-   var prompts = ["Password is at least 8 characters.",
-  "\nPassword has a mixture of both uppercase and lowercase letters", 
-  "\nPassword has a mixture of letters and numbers", 
-  "\nPassword includes at least one special character, e.g., ! @ # ? ]"]
-
-  document.getElementById("generate").addEventListener("click", function () {
-    document.getElementById("password").innerHTML= prompts.join(" ");
-  });
+}
+  
 }
 
-promptsDisplay();
+var promptQuestionL = function () {
+  var lowercase = "";
+  var validateL = true;
 
-// document.getElementById("generate").addEventListener("click", function () {
-//   document.getElementById("password").innerHTML= "testing";
-// });
+  lowercase = prompt("Would you like to include lowercase letters in your password?")
 
-// Method 2 Reference //
+  if (lowercase === "yes" || lowercase === "YES") {
+    validateL = true;
+  }
+  else if (lowercase === "no" || lowercase === "NO") {
+    validateL = false; 
+  }
+  else {
+    window.alert("Invalid input. Answer the question with 'yes' or 'no.'");
+  }
+}
 
-// function showPrompts() {
-//   var promptList = new Array("Password is at least 8 characters.", 
-//   "Password has a mixture of both uppercase and lowercase letters", 
-//   "Password has a mixture of letters and numbers", 
-//   "Password includes at least one special character, e.g., ! @ # ? ]");
-//   promptList.sort();
+var promptQuestionU = function () {
+  var uppercase = "";
+  var validateU = true;
 
-//   document.getElementById("password").innerHTML = promptList.join(" ");
-// }
+  uppercase = prompt("Would you like to include uppercase letters in your password?")
 
-// showPrompts();
+  if (uppercase === "yes" || uppercase === "YES") {
+    validateU = true;
+  }
+  else if (uppercase === "no" || uppercase === "NO") {
+    validateU = false; 
+  }
+  else {
+    window.alert("Invalid input. Answer the question with 'yes' or 'no.'");
+  }
+}
 
+var promptQuestionNu = function () {
+  var numeric = "";
+  var validateNu = true;
+
+  numeric = prompt("Would you like to include numeric characters in your password?")
+
+  if (numeric === "yes" || numeric === "YES") {
+    validateNu = true;
+  }
+  else if (numeric === "no" || numeric === "NO") {
+    validateNu = false; 
+  }
+  else {
+    window.alert("Invalid input. Answer the question with 'yes' or 'no.'");
+  }
+}
+
+
+var promptQuestionS = function () {
+  var special = "";
+  var validateS = true;
+
+  special = prompt("Would you like to include special characters in your password?")
+
+  if (special === "yes" || special === "YES") {
+    validateS = true;
+  }
+  else if (special === "no" || special === "NO") {
+    validateS = false; 
+  }
+  else {
+    window.alert("Invalid input. Answer the question with 'yes' or 'no.'");
+  }
+}
+
+promptQuestionN();
+promptQuestionL();
+promptQuestionU();
+promptQuestionNu();
+promptQuestionS();
 
 
 // Get references to the #generate element
