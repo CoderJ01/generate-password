@@ -1,6 +1,5 @@
 var promptQuestionN = function () {
   var numChars = "";
-  //var listOfChars = [];
   
   while (numChars < 8 || numChars > 128) {
     numChars = prompt("Enter the number of characters (8 - 128) you would like your password to have");
@@ -11,6 +10,8 @@ var promptQuestionN = function () {
   }
 
   console.log(numChars);
+
+  return numChars;
   
   // for (var i = 0; i < numChars; i++) {
   //   var randomNum = listOfChars[Math.floor(Math.random() * 5)];
@@ -53,6 +54,8 @@ var promptQuestionU = function () {
   if (uppercase === "yes" || uppercase === "YES") {
     validateU = true;
   }
+
+  return validateU;
 }
 
 var promptQuestionNu = function () {
@@ -71,6 +74,8 @@ var promptQuestionNu = function () {
   if (numeric === "yes" || numeric === "YES") {
     validateNu = true;
   }
+
+  return validateNu;
 }
 
 var promptQuestionS = function () {
@@ -97,16 +102,9 @@ var promptQuestionS = function () {
   return validateS;
 }
 
- 
-// promptQuestionN();
-// promptQuestionL();
-// promptQuestionU();
-// promptQuestionNu();
-// promptQuestionS();
-
-
 var selectedOrNot = function () {
   var nResult = promptQuestionN();
+  var listOfChars = [];
 
   while (lResult !== true && uResult !== true && nuResult !== true && sResult !== true) {
     var lResult = promptQuestionL();
@@ -117,7 +115,33 @@ var selectedOrNot = function () {
     if (lResult !== true && uResult !== true && nuResult !== true && sResult !== true) {
       window.alert("Invalid inputs! At least one character type needs to be validated!");
     }
-  } 
+  }
+  
+  if (lResult === true) {
+    listOfChars.push = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+                        't', 'u', 'v', 'w', 'x', 'y', 'z'];
+  }
+
+  if (uResult === true) {
+    listOfChars.push = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 
+                        'T', 'U', 'V', 'W', 'X', 'Y', 'Z']; 
+  }
+
+  if (nuResult === true) {
+    listOfChars.push = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+  }
+
+  if (sResult === true) {
+    listOfChars.push = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+'];
+  }
+
+  console.log("nResult: " + nResult);
+  console.log("lResult: " + lResult);
+  console.log("uResult: " + uResult);
+  console.log("nuResult: " + nuResult);
+  console.log("sResult: " + sResult);
+  console.log(listOfChars);
+
 }
 
 selectedOrNot();
