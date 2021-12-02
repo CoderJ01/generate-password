@@ -88,11 +88,13 @@ var promptQuestionS = function () {
 
   console.log(special);
 
-  if(special === "yes" || special == "YES") {
+  if(special === "yes" || special === "YES") {
     validateS = true;
   }
 
- console.log(validateS);
+  console.log(validateS);
+
+  return validateS;
 }
 
  
@@ -100,9 +102,21 @@ var promptQuestionS = function () {
 // promptQuestionL();
 // promptQuestionU();
 // promptQuestionNu();
-promptQuestionS();
+// promptQuestionS();
 
-console.log(validateS);
+
+var selectedOrNot = function () {
+  var nResult = promptQuestionN();
+  var lResult = promptQuestionL();
+  var uResult = promptQuestionU();
+  var nuResult = promptQuestionNu();
+  var sResult = promptQuestionS();
+  console.log(sResult + " hey");
+}
+
+selectedOrNot();
+
+
 
 
 
