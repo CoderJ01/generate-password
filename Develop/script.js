@@ -1,5 +1,6 @@
 var promptQuestionN = function () {
   var numChars = "";
+  var listOfChars = [];
   
   while (numChars < 8 || numChars > 128) {
     numChars = prompt("Enter the number of characters (8 - 128) you would like your password to have");
@@ -8,15 +9,17 @@ var promptQuestionN = function () {
       window.alert("Invalid input. The number of characters need to be between 8 and 128");
     }
   }
+
+  console.log(numChars);
   
-  for (var i = 0; i < numChars; i++) {
-    var randomNum = listOfChars[Math.floor(Math.random() * 5)];
-  }
+  // for (var i = 0; i < numChars; i++) {
+  //   var randomNum = listOfChars[Math.floor(Math.random() * 5)];
+  // }
 }
 
 var promptQuestionL = function () {
   var lowercase = "";
-  var validateL = true;
+  var validateL = false;
 
   while (lowercase !== "yes" && lowercase !== "YES" && lowercase !== "no" &&  lowercase !== "NO") {
 
@@ -30,16 +33,13 @@ var promptQuestionL = function () {
   if (lowercase === "yes" || lowercase === "YES") {
     validateL = true;
   }
-  else {
-    validateL = false; 
-  }
 
   return validateL;
 }
 
 var promptQuestionU = function () {
   var uppercase = "";
-  var validateU = true;
+  var validateU = false;
 
   while (uppercase !== "yes" && uppercase !== "YES" && uppercase !== "no" &&  uppercase !== "NO") {
 
@@ -53,14 +53,11 @@ var promptQuestionU = function () {
   if (uppercase === "yes" || uppercase === "YES") {
     validateU = true;
   }
-  else {
-    validateU = false; 
-  }
 }
 
 var promptQuestionNu = function () {
   var numeric = "";
-  var validateNu = true;
+  var validateNu = false;
 
   while (numeric !== "yes" && numeric !== "YES" && numeric !== "no" &&  numeric !== "NO") {
 
@@ -74,14 +71,11 @@ var promptQuestionNu = function () {
   if (numeric === "yes" || numeric === "YES") {
     validateNu = true;
   }
-  else {
-    validateNu = false; 
-  }
 }
 
 var promptQuestionS = function () {
   var special = "";
-  var validateS = true;
+  var validateS = false;
 
   while (special !== "yes" && special !== "YES" && special !== "no" &&  special !== "NO") {
 
@@ -92,19 +86,24 @@ var promptQuestionS = function () {
     }
   }
 
-  if (special === "yes" || special === "YES") {
+  console.log(special);
+
+  if(special === "yes" || special == "YES") {
     validateS = true;
   }
-  else {
-    validateS = false; 
-  }
+
+ console.log(validateS);
 }
 
+ 
 // promptQuestionN();
 // promptQuestionL();
-promptQuestionU();
+// promptQuestionU();
 // promptQuestionNu();
-// promptQuestionS();
+promptQuestionS();
+
+console.log(validateS);
+
 
 
 // Get references to the #generate element
