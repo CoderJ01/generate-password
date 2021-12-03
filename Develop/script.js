@@ -9,8 +9,6 @@ var promptQuestionN = function () {
     }
   }
 
-  console.log(numChars);
-
   return numChars;
   
   // for (var i = 0; i < numChars; i++) {
@@ -91,20 +89,15 @@ var promptQuestionS = function () {
     }
   }
 
-  console.log(special);
-
   if(special === "yes" || special === "YES") {
     validateS = true;
   }
-
-  console.log(validateS);
 
   return validateS;
 }
 
 var selectedOrNot = function () {
   var nResult = promptQuestionN();
-  var listOfChars = [];
 
   while (lResult !== true && uResult !== true && nuResult !== true && sResult !== true) {
     var lResult = promptQuestionL();
@@ -116,24 +109,99 @@ var selectedOrNot = function () {
       window.alert("Invalid inputs! At least one character type needs to be validated!");
     }
   }
+
+  var listOfChars = [];
   
   if (lResult === true) {
-    listOfChars.push = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-                        't', 'u', 'v', 'w', 'x', 'y', 'z'];
-  }
+    listOfChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+                        't', 'u', 'v', 'w', 'x', 'y', 'z'];                      
+  } 
 
   if (uResult === true) {
-    listOfChars.push = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 
+    listOfChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 
                         'T', 'U', 'V', 'W', 'X', 'Y', 'Z']; 
   }
 
   if (nuResult === true) {
-    listOfChars.push = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+    listOfChars = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
   }
 
   if (sResult === true) {
-    listOfChars.push = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+'];
+    listOfChars = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+'];
   }
+
+  // Combo of Two //
+
+  if (lResult === true && uResult === true) {
+    listOfChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+    't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 
+    'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+  }
+
+  if (lResult === true && nuResult === true) {
+    listOfChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+    't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+
+  }
+
+  if (lResult === true && sResult === true) {
+    listOfChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+    't', 'u', 'v', 'w', 'x', 'y', 'z', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+'];
+
+  }
+
+  if (uResult === true && nuResult === true) {
+    listOfChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 
+    'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+
+  }
+
+  if (uResult === true && sResult === true) {
+    listOfChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 
+    'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+'];
+
+  }
+
+  if (nuResult === true && sResult === true) {
+    listOfChars = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+'];
+
+  }
+
+  // Combo of Three //
+
+  if (lResult === true && uResult === true && nuResult === true) {
+    listOfChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+    't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 
+    'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+   
+  }
+
+  if (lResult === true && uResult === true && sResult === true) {
+    listOfChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+    't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 
+    'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+'];
+   
+  }
+
+  if (lResult === true && nuResult === true && sResult === true) {
+    listOfChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+    't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+'];
+   
+  }
+
+  if (uResult === true && nuResult === true && sResult === true) {
+    listOfChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 
+    'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+'];
+  }
+
+  if (lResult === true && uResult === true && nuResult === true && sResult === true) {
+    listOfChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+    't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 
+    'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+'];
+
+  }
+
+// listOfChars = [upperArray + lowerArray];
 
   console.log("nResult: " + nResult);
   console.log("lResult: " + lResult);
