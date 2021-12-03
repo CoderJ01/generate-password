@@ -10,10 +10,6 @@ var promptQuestionN = function () {
   }
 
   return numChars;
-  
-  // for (var i = 0; i < numChars; i++) {
-  //   var randomNum = listOfChars[Math.floor(Math.random() * 5)];
-  // }
 }
 
 var promptQuestionL = function () {
@@ -198,10 +194,7 @@ var selectedOrNot = function () {
     listOfChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
     't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 
     'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+'];
-
   }
-
-// listOfChars = [upperArray + lowerArray];
 
   console.log("nResult: " + nResult);
   console.log("lResult: " + lResult);
@@ -210,9 +203,21 @@ var selectedOrNot = function () {
   console.log("sResult: " + sResult);
   console.log(listOfChars);
 
+  return listOfChars;
 }
 
-selectedOrNot();
+//selectedOrNot();
+
+var RandomizeCharacters = function() {
+  // for (var i = 0; i < numChars; i++) {
+  //   var randomNum = listOfChars[Math.floor(Math.random() * 5)];
+  // }
+
+  var randomize = selectedOrNot();
+
+}
+
+RandomizeCharacters();
 
 
 
