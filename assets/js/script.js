@@ -1,4 +1,4 @@
-// Set up prompts //
+// set up prompts 
 
 var promptQuestionN = function () {
   var numChars = "";
@@ -98,7 +98,7 @@ var promptQuestionS = function () {
   return validateS;
 }
 
-// generate Password
+// generate password 
 
 var generatePassword = function () {
 
