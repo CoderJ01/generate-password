@@ -1,15 +1,17 @@
+// Set up prompts //
+
 var promptQuestionN = function () {
   var numChars = "";
     
   while (numChars < 8 || numChars > 128 || !/^[0-9]+$/.test(numChars)) {
     numChars = prompt("Enter the number of characters (8 - 128) you would like your password to have.");
-  
+
     if (numChars < 8 || numChars > 128) {
       window.alert("Invalid input. The number of characters need to be between 8 and 128.");
     }
 
     if (!/^[0-9]+$/.test(numChars)) {
-      window.alert("Invalid input. Input needs to be an integer.")
+      window.alert("Invalid input. Input needs to be an integer.");
     }
   }
   
@@ -52,7 +54,7 @@ var promptQuestionU = function () {
   if (uppercase === "yes" || uppercase === "YES") {
     validateU = true;
   }
-
+  
   return validateU;
 }
 
@@ -96,6 +98,8 @@ var promptQuestionS = function () {
   return validateS;
 }
 
+// generate Password
+
 var generatePassword = function () {
 
   var numChar = promptQuestionN();
@@ -112,7 +116,6 @@ var generatePassword = function () {
   }
 
   var listOfChars = [];
-
 
     // Single //
   
@@ -206,30 +209,12 @@ var generatePassword = function () {
 
   var randomString = '';
   for(var i = 0; i < numChar; i++) {
-    randomString += listOfChars[Math.floor(Math.random() * numChar)];
+    var mathFloor = Math.floor(Math.random() * listOfChars.length);
+    randomString += listOfChars[mathFloor];
   }
 
-  console.log("numChar = " + numChar);
-  console.log(lResult);
-  console.log(uResult);
-  console.log(nuResult);
-  console.log(sResult);
-  console.log("listOfChars.length = " + listOfChars.length);
-  console.log("ramdomString = "  + randomString);
-  console.log("randomString.legnth = " + randomString.length);
+  return randomString;
 }
-
-//var randomize = selectedOrNot();
-
-// document.getElementById("generate").addEventListener("click", function () {
-//   document.getElementById("password").innerHTML= randomize.join(" ");
-// });
-
-// function generatePassword () {
-//   var randomize = selectedOrNot();
-//   return randomize;
-// }
-
 
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
@@ -241,7 +226,6 @@ function writePassword() {
 
   passwordText.value = password;
 }
-
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
