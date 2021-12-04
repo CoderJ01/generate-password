@@ -10,7 +10,7 @@ The ojective of this website is to generate a password based on answers to a ser
  * JavaScript
 
  ## Screenshot of Website
- ![Alt text](./image/image-snapshot.JPG?raw=true "Password Generator")
+ ![Alt text](./assets/images/image-snapshot.JPG?raw=true "Password Generator")
 
  ## Website Link
  https://coderj01.github.io/generate-password/
