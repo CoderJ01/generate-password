@@ -1,11 +1,15 @@
 var promptQuestionN = function () {
   var numChars = "";
     
-  while (numChars < 8 || numChars > 128) {
-    numChars = prompt("Enter the number of characters (8 - 128) you would like your password to have");
+  while (numChars < 8 || numChars > 128 || !/^[0-9]+$/.test(numChars)) {
+    numChars = prompt("Enter the number of characters (8 - 128) you would like your password to have.");
   
     if (numChars < 8 || numChars > 128) {
-      window.alert("Invalid input. The number of characters need to be between 8 and 128");
+      window.alert("Invalid input. The number of characters need to be between 8 and 128.");
+    }
+
+    if (!/^[0-9]+$/.test(numChars)) {
+      window.alert("Invalid input. Input needs to be an integer.")
     }
   }
   
@@ -92,7 +96,7 @@ var promptQuestionS = function () {
   return validateS;
 }
 
-var selectedOrNot = function () {
+var generatePassword = function () {
 
   var numChar = promptQuestionN();
 
@@ -108,61 +112,64 @@ var selectedOrNot = function () {
   }
 
   var listOfChars = [];
+
+
+    // Single //
   
-  if (lResult === true) {
-    listOfChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-                        't', 'u', 'v', 'w', 'x', 'y', 'z'];                      
-  } 
+    if (lResult === true) {
+      listOfChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+                          't', 'u', 'v', 'w', 'x', 'y', 'z'];                      
+    } 
+  
+    if (uResult === true) {
+      listOfChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 
+                          'T', 'U', 'V', 'W', 'X', 'Y', 'Z']; 
+    }
+  
+    if (nuResult === true) {
+      listOfChars = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+    }
+  
+    if (sResult === true) {
+      listOfChars = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+'];
+    }
 
-  if (uResult === true) {
-    listOfChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 
-                        'T', 'U', 'V', 'W', 'X', 'Y', 'Z']; 
-  }
+    // Combo of Two //
 
-  if (nuResult === true) {
-    listOfChars = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
-  }
-
-  if (sResult === true) {
-    listOfChars = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+'];
-  }
-
-  // Combo of Two //
-
-  if (lResult === true && uResult === true) {
-    listOfChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-    't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 
-    'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
-  }
-
-  if (lResult === true && nuResult === true) {
-    listOfChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-    't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
-
-  }
-
-  if (lResult === true && sResult === true) {
-    listOfChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
-    't', 'u', 'v', 'w', 'x', 'y', 'z', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+'];
-
-  }
-
-  if (uResult === true && nuResult === true) {
-    listOfChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 
-    'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
-
-  }
-
-  if (uResult === true && sResult === true) {
-    listOfChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 
-    'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+'];
-
-  }
-
-  if (nuResult === true && sResult === true) {
-    listOfChars = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+'];
-
-  }
+    if (lResult === true && uResult === true) {
+      listOfChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+      't', 'u', 'v', 'w', 'x', 'y', 'z', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 
+      'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+    }
+  
+    if (lResult === true && nuResult === true) {
+      listOfChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+      't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+  
+    }
+  
+    if (lResult === true && sResult === true) {
+      listOfChars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+      't', 'u', 'v', 'w', 'x', 'y', 'z', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+'];
+  
+    }
+  
+    if (uResult === true && nuResult === true) {
+      listOfChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 
+      'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0'];
+  
+    }
+  
+    if (uResult === true && sResult === true) {
+      listOfChars = ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 
+      'T', 'U', 'V', 'W', 'X', 'Y', 'Z', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+'];
+  
+    }
+  
+    if (nuResult === true && sResult === true) {
+      listOfChars = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_', '+'];
+  
+    }
 
   // Combo of Three //
 
@@ -198,21 +205,30 @@ var selectedOrNot = function () {
   }
 
   var randomString = '';
-  var finalList = listOfChars;
   for(var i = 0; i < numChar; i++) {
-    randomString += finalList[Math.floor(Math.random() * numChar)];
+    randomString += listOfChars[Math.floor(Math.random() * numChar)];
   }
 
-  console.log(randomString);
-
+  console.log("numChar = " + numChar);
+  console.log(lResult);
+  console.log(uResult);
+  console.log(nuResult);
+  console.log(sResult);
+  console.log("listOfChars.length = " + listOfChars.length);
+  console.log("ramdomString = "  + randomString);
+  console.log("randomString.legnth = " + randomString.length);
 }
 
-var randomize = selectedOrNot();
+//var randomize = selectedOrNot();
 
+// document.getElementById("generate").addEventListener("click", function () {
+//   document.getElementById("password").innerHTML= randomize.join(" ");
+// });
 
-
-
-
+// function generatePassword () {
+//   var randomize = selectedOrNot();
+//   return randomize;
+// }
 
 
 // Get references to the #generate element
@@ -224,8 +240,8 @@ function writePassword() {
   var passwordText = document.querySelector("#password");
 
   passwordText.value = password;
-
 }
+
 
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
